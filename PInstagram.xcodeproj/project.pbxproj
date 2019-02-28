@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		38AD8260222780A7003D4C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AD825F222780A7003D4C38 /* AppDelegate.swift */; };
-		38AD8262222780A7003D4C38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AD8261222780A7003D4C38 /* ViewController.swift */; };
+		38AD8262222780A7003D4C38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AD8261222780A7003D4C38 /* HomeViewController.swift */; };
 		38AD8265222780A7003D4C38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AD8263222780A7003D4C38 /* Main.storyboard */; };
 		38AD8267222780A8003D4C38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AD8266222780A8003D4C38 /* Assets.xcassets */; };
 		38AD826A222780A8003D4C38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AD8268222780A8003D4C38 /* LaunchScreen.storyboard */; };
+		38AD827222278244003D4C38 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AD827122278244003D4C38 /* PostView.swift */; };
+		38AD827422278FD4003D4C38 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AD827322278FD4003D4C38 /* ProfileTableViewController.swift */; };
+		38AD827622279046003D4C38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AD827522279046003D4C38 /* Post.swift */; };
+		38AD827822279117003D4C38 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AD827722279117003D4C38 /* ProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		38AD825C222780A7003D4C38 /* PInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AD825F222780A7003D4C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38AD8261222780A7003D4C38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38AD8261222780A7003D4C38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		38AD8264222780A7003D4C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38AD8266222780A8003D4C38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38AD8269222780A8003D4C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38AD826B222780A8003D4C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38AD827122278244003D4C38 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		38AD827322278FD4003D4C38 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		38AD827522279046003D4C38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		38AD827722279117003D4C38 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				38AD825F222780A7003D4C38 /* AppDelegate.swift */,
-				38AD8261222780A7003D4C38 /* ViewController.swift */,
+				38AD827522279046003D4C38 /* Post.swift */,
+				38AD827122278244003D4C38 /* PostView.swift */,
+				38AD8261222780A7003D4C38 /* HomeViewController.swift */,
+				38AD827322278FD4003D4C38 /* ProfileTableViewController.swift */,
+				38AD827722279117003D4C38 /* ProfileTableViewCell.swift */,
 				38AD8263222780A7003D4C38 /* Main.storyboard */,
 				38AD8266222780A8003D4C38 /* Assets.xcassets */,
 				38AD8268222780A8003D4C38 /* LaunchScreen.storyboard */,
@@ -135,8 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38AD8262222780A7003D4C38 /* ViewController.swift in Sources */,
+				38AD8262222780A7003D4C38 /* HomeViewController.swift in Sources */,
+				38AD827222278244003D4C38 /* PostView.swift in Sources */,
+				38AD827422278FD4003D4C38 /* ProfileTableViewController.swift in Sources */,
+				38AD827822279117003D4C38 /* ProfileTableViewCell.swift in Sources */,
 				38AD8260222780A7003D4C38 /* AppDelegate.swift in Sources */,
+				38AD827622279046003D4C38 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GAM624UM6K;
 				INFOPLIST_FILE = PInstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GAM624UM6K;
 				INFOPLIST_FILE = PInstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
