@@ -44,4 +44,11 @@ class ProfileTableViewController : UITableViewController{
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
     }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y < -100
+        {
+            dismiss(animated: true, completion: nil);
+        }
+    }
 }
