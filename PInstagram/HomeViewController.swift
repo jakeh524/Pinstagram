@@ -10,35 +10,26 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var postView = PostView()
+    
     var swipeLeftRecognizer = UISwipeGestureRecognizer()
     var swipeRightRecognizer = UISwipeGestureRecognizer()
-    var button = UIButton()
+    var swipeUpRecognizer = UISwipeGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(postView)
         postView.addGestureRecognizer(swipeLeftRecognizer)
         postView.addGestureRecognizer(swipeRightRecognizer)
+        view.addGestureRecognizer(swipeUpRecognizer)
         
         swipeLeftRecognizer.direction = .left
         swipeRightRecognizer.direction = .right
+        swipeUpRecognizer.direction = .up
         
         swipeLeftRecognizer.addTarget(self, action: #selector(handleLeft))
         swipeRightRecognizer.addTarget(self, action: #selector(handleRight))
-        
-        
-        // TODO: Get rid of this
-        button.setTitle("Profile", for: .normal)
-        button.frame = CGRect(x: 0, y: 300, width: 0, height: 0)
-        button.sizeToFit()
-        button.addTarget(self, action: #selector(goToProfile), for: .touchUpInside)
-        view.addSubview(button)
+        swipeUpRecognizer.addTarget(self, action: #selector(handleUp))
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    // TODO: get rid of this
-    @objc func goToProfile() {
-        present(ProfileTableViewController(), animated: true, completion: nil)
     }
     
     override func viewWillLayoutSubviews() {
@@ -88,6 +79,10 @@ class HomeViewController: UIViewController {
                 self.swipeRightRecognizer.isEnabled = true
             })
         }
+    }
+    
+    @objc func handleUp(recognizer: UIGestureRecognizer) {
+        present(ProfileTableViewController(), animated: true, completion: nil)
     }
 
 
