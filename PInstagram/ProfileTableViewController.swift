@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Photos
 
-class ProfileTableViewController : UITableViewController{
+class ProfileTableViewController : UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var savedPosts: [Post] = [
         Post(image: UIImage(named: "bg"), numLikes: 420),
         Post(image: UIImage(named: "bg"), numLikes: 420),
@@ -50,5 +51,19 @@ class ProfileTableViewController : UITableViewController{
         {
             dismiss(animated: true, completion: nil);
         }
+    }
+    
+    @objc func makePost()
+    {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        
+        
     }
 }
