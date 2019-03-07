@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableViewController : UITableViewController{
+class ProfileTableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     var savedPosts: [Post] = [
         Post(image: UIImage(named: "bg"), numLikes: 420),
         Post(image: UIImage(named: "bg"), numLikes: 420),
@@ -16,21 +16,51 @@ class ProfileTableViewController : UITableViewController{
         Post(image: UIImage(named: "bg"), numLikes: 420)
     ]
     
+    var createButton = UIButton()
+    var tableVC = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileTableViewCell")
+        tableVC.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileTableViewCell")
+        tableVC.dataSource = self
+        tableVC.delegate = self
+        
+        createButton.setTitle("Create Post", for: .normal)
+        createButton.backgroundColor = .yellow
+        view.addSubview(tableVC)
+        view.addSubview(createButton)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func viewWillLayoutSubviews() {
+        let buttonHeight : CGFloat = 80
+        
+        var tableViewFrame = CGRect.zero
+        tableViewFrame.size.width = view.frame.width
+        tableViewFrame.size.height = view.frame.height - buttonHeight
+        tableViewFrame.origin.x = view.frame.minX
+        tableViewFrame.origin.y = view.frame.minY
+        
+        tableVC.frame = tableViewFrame
+        
+        var createButtonFrame = CGRect.zero
+        createButtonFrame.size.width = view.frame.width
+        createButtonFrame.size.height = buttonHeight
+        createButtonFrame.origin.x = view.frame.minX
+        createButtonFrame.origin.y = view.frame.maxY - buttonHeight
+        createButton.frame = createButtonFrame
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return(1)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedPosts.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell") as? ProfileTableViewCell else {
             fatalError()
         }
@@ -41,11 +71,11 @@ class ProfileTableViewController : UITableViewController{
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
     }
     
-    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView.contentOffset.y < -100
         {
             dismiss(animated: true, completion: nil);
