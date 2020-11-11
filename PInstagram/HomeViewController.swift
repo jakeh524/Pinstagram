@@ -52,6 +52,7 @@ class HomeViewController: UIViewController {
         }) { (_) in
             self.postView.frame = oldFrame
             self.postView.alpha = 0
+            self.postView.changePhoto()
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
                 self.postView.alpha = 1
             }, completion: { (_) in
@@ -72,6 +73,7 @@ class HomeViewController: UIViewController {
         }) { (_) in
             self.postView.frame = oldFrame
             self.postView.alpha = 0
+            self.postView.changePhoto()
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
                 self.postView.alpha = 1
             }, completion: { (_) in

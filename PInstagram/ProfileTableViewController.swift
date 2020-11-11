@@ -11,10 +11,10 @@ import Photos
 
 class ProfileTableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var savedPosts: [Post] = [
-        Post(image: UIImage(named: "bg"), numLikes: 420),
-        Post(image: UIImage(named: "bg"), numLikes: 420),
-        Post(image: UIImage(named: "bg"), numLikes: 420),
-        Post(image: UIImage(named: "bg"), numLikes: 420)
+        Post(image: UIImage(named: "1"), numLikes: 42032),
+        Post(image: UIImage(named: "2"), numLikes: 4203),
+        Post(image: UIImage(named: "3"), numLikes: 4202),
+        Post(image: UIImage(named: "4"), numLikes: 0)
     ]
     
     var createButton = UIButton()

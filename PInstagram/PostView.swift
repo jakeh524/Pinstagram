@@ -15,7 +15,7 @@ class PostView: UIView{
     override init(frame: CGRect) {
         super.init(frame:frame)
         
-        imageView.image = UIImage(named: "bg")
+        imageView.image = UIImage(named: String(arc4random_uniform(4) + 1))
         label.text = "420 likes"
         
         imageView.backgroundColor = .lightGray
@@ -26,6 +26,10 @@ class PostView: UIView{
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func changePhoto() {
+        imageView.image = UIImage(named: String(arc4random_uniform(4) + 1))
     }
     
     override func layoutSubviews() {
